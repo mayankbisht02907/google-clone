@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Clone</title>
+    <title>Google</title>
 </head>
 <body>
     <header>
@@ -21,29 +21,55 @@
     </header>
 
     <main>
-        <div style="text-align: center;">
-            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" 
-                 alt="Google Logo">
-        </div>
-        
-        <div style="text-align: center;">
-            <form>
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" 
+             alt="Google Logo">
+             
+        <div>
+            <form onsubmit="performSearch(event)">
                 <input type="text" name="q" 
-                       placeholder="Search Google or type a URL" style="width: 400px; height: 30px;">
+                       placeholder="Search Google or type a URL">
+                <br><br>
+                <input type="submit" value="Google Search">
+                <a href="https://doodles.google/">
+                    <input type="button" value="I'm Feeling Lucky">
+                </a>
             </form>
         </div>
-        
+
+        <div style="margin-top: 20px;">
+            <span>Google offered in: </span>
+            <a href="#">english</a>
+        </div>
+
         <div style="text-align: center; margin-top: 20px;">
-            <input type="submit" value="Google Search">
-            <input type="button" value="I'm Feeling Lucky" 
-                   onclick="window.location.href='https://doodles.google.com/'">
-        <a href="https://app.diagrams.net/?splash=0&url=https://github.com/Mayankbisht02907/google-clown/raw/main/dom.drawio">Open DOM Structure </a></a>
-                </div>
+            <a href="dom.png" target="_blank">
+                <img src="dom.png" alt="DOM" style="max-width: 100px;">
+            </a>
+        </div>
     </main>
 
     <div style="text-align: center; margin-top: 20px;">
-        <span>Google offered in: </span>
-        <a href="#">English</a>
+        <a href="#" onclick="showImage(event);">Click here to see the image</a>
     </div>
+
+    <div id="imageContainer" style="display: none; text-align: center; margin-top: 20px;">
+        <img src="dom.png" alt="DOM">
+    </div>
+
+    <script>
+        function performSearch(event) {
+            event.preventDefault();
+            const query = document.querySelector('input[name="q"]').value;
+            if (query) {
+                window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+            }
+        }
+
+        function showImage(event) {
+            event.preventDefault();
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.style.display = 'block'; // Show the image container
+        }
+    </script>
 </body>
 </html>
