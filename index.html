@@ -36,25 +36,16 @@
             </form>
         </div>
 
-        <div style="margin-top: 20px;">
+        <div style=" margin-top: 20px;">
             <span>Google offered in: </span>
             <a href="#">english</a>
         </div>
 
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="dom.png" target="_blank">
-                <img src="dom.png" alt="DOM" style="max-width: 100px;">
-            </a>
+      
+        <div style=" margin-top: 20px;">
+            <a href="dom.png" >DOM</a>
         </div>
     </main>
-
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="#" onclick="showImage(event);">Click here to see the image</a>
-    </div>
-
-    <div id="imageContainer" style="display: none; text-align: center; margin-top: 20px;">
-        <img src="dom.png" alt="DOM">
-    </div>
 
     <script>
         function performSearch(event) {
@@ -63,12 +54,6 @@
             if (query) {
                 window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
             }
-        }
-
-        function showImage(event) {
-            event.preventDefault();
-            const imageContainer = document.getElementById('imageContainer');
-            imageContainer.style.display = 'block'; // Show the image container
         }
     </script>
 </body>
